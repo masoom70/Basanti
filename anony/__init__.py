@@ -4,6 +4,7 @@
 
 
 import time
+import asyncio
 import logging
 from logging.handlers import RotatingFileHandler
 
@@ -66,7 +67,7 @@ async def stop() -> None:
         task.cancel()
         try:
             await task
-        except:
+        except asyncio.exceptions.CancelledError:
             pass
 
     await app.exit()
