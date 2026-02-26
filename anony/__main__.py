@@ -41,6 +41,7 @@ async def main():
     logger.info(f"Loaded {len(app.sudoers)} sudo users.")
 
     from anony.helpers import thumb
+    await yt.fallen.get_session()
     await thumb.get_session()
 
     await idle()
