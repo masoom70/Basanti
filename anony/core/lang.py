@@ -83,7 +83,7 @@ class Language:
                         admins = await db.get_admins(chat.id)
                         if fallen.from_user.id in admins:
                             return await chat.leave()
-                except:
+                except Exception:
                     pass
 
                 if chat.id in db.blacklisted:

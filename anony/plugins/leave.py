@@ -40,7 +40,7 @@ async def _leaveall(_, m: types.Message):
             await asses[num].leave_chat(chat.id)
             await asyncio.sleep(3)
             left += 1
-        except:
+        except Exception:
             failed += 1
             continue
 

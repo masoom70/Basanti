@@ -70,5 +70,5 @@ async def _broadcast(_, message: types.Message):
         )
         os.remove("errors.txt")
     try: await sent.delete()
-    except: pass
+    except Exception: pass
     await message.reply_text(text)

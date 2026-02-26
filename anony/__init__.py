@@ -69,9 +69,15 @@ async def stop() -> None:
             await task
         except asyncio.exceptions.CancelledError:
             pass
+    logger.info("All tasks cancelled.")
 
     await app.exit()
+    logger.info("Bot stopped.")
+
     await userbot.exit()
+    logger.info("Userbot stopped.")
+
     await db.close()
+    logger.info("Database connection closed.")
 
     logger.info("Stopped.\n")
