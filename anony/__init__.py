@@ -3,6 +3,7 @@
 # This file is part of AnonXMusic
 
 
+print(1)
 import time
 import asyncio
 import logging
