@@ -3,9 +3,6 @@
 # This file is part of AnonXMusic
 
 
-#import multiprocessing
-#multiprocessing.set_start_method("forkserver", force=True)
-
 import time
 import asyncio
 import logging
@@ -15,13 +12,13 @@ logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s: %(message)s",
     datefmt="%d-%b-%y %H:%M:%S",
     handlers=[
-        RotatingFileHandler("log.txt", maxBytes=10485760, backupCount=5),
+        RotatingFileHandler("log.txt", maxBytes=5242880, backupCount=1),
         logging.StreamHandler(),
     ],
     level=logging.INFO,
 )
 logging.getLogger("httpx").setLevel(logging.ERROR)
-logging.getLogger("ntgcalls").setLevel(logging.CRITICAL)
+logging.getLogger("ntgcalls").setLevel(logging.DEBUG)
 logging.getLogger("pymongo").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.CRITICAL)
 logging.getLogger("pytgcalls").setLevel(logging.CRITICAL)
