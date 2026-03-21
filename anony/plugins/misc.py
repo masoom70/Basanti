@@ -41,7 +41,7 @@ async def auto_leave():
                         logger.info(f"Left {chat}")
                     except Exception as ex:
                         logger.warning(f"Failed to leave {chat}: {ex}")
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(15)
             except asyncio.CancelledError:
                 raise
             except Exception:
