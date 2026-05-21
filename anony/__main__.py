@@ -42,7 +42,7 @@ async def main():
 
     from anony.helpers import thumb
     await yt.fallen.get_session()
-    await thumb.get_session()
+    #await thumb.get_session()
 
     await idle()
     await stop()
